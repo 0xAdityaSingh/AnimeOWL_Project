@@ -27,16 +27,16 @@ class _KitsuAnimeRowState extends State<KitsuAnimeRow>
         return watch(widget.futureProvider).when(
           data: (data) {
             return Container(
-              height: 300,
-              margin: EdgeInsets.symmetric(horizontal: 12),
+              height: 250,
+              margin: EdgeInsets.symmetric(horizontal: 0),
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 physics: BouncingScrollPhysics(),
                 itemCount: data.item1.keys.length,
                 itemBuilder: (context, index) {
                   return Container(
-                    width: 200,
-                    padding: EdgeInsets.symmetric(horizontal: 4.0),
+                    width: 150,
+                    padding: EdgeInsets.symmetric(horizontal: 5.0),
                     child: DiscoverAnimeTile(
                       kitsuModel: data.item1.values.elementAt(index),
                       twistModel: data.item1.keys.elementAt(index),
@@ -48,15 +48,15 @@ class _KitsuAnimeRowState extends State<KitsuAnimeRow>
           },
           loading: () {
             return Container(
-              height: 300,
-              margin: EdgeInsets.symmetric(horizontal: 12),
+              height: 250,
+              margin: EdgeInsets.symmetric(horizontal: 0),
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return Container(
-                    width: 200,
-                    padding: EdgeInsets.symmetric(horizontal: 4.0),
+                    width: 150,
+                    padding: EdgeInsets.symmetric(horizontal: 5.0),
                     child: LoadingAnimeTile(),
                   );
                 },

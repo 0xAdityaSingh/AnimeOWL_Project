@@ -51,7 +51,7 @@ class DefaultCard extends StatelessWidget {
                   color: Colors.white,
                 ),
                 borderRadius: BorderRadius.circular(
-                  20.0,
+                  0.0,
                 ),
               ),
               child: Text(
@@ -59,7 +59,7 @@ class DefaultCard extends StatelessWidget {
                 style: GoogleFonts.montserrat(
                   // letterSpacing: 1.25,
                   fontWeight: FontWeight.bold,
-                  fontSize: 12.0,
+                  fontSize: 15.0,
                 ),
               ),
             ),

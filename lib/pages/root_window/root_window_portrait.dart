@@ -62,22 +62,22 @@ class RootWindowPortrait extends StatelessWidget {
             },
             items: [
               BottomNavigationBarItem(
-                icon: Icon(Icons.home),
+                icon: Icon(Icons.home_outlined),
                 label: 'Home',
                 tooltip: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.favorite_outline),
+                icon: Icon(Icons.favorite_border_rounded),
                 label: 'Favorites',
                 tooltip: 'Favorites',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.grid_view),
+                icon: Icon(Icons.list_rounded),
                 label: 'Discover',
                 tooltip: 'Discover',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.settings),
+                icon: Icon(Icons.settings_outlined),
                 label: 'Settings',
                 tooltip: 'Settings',
               ),

@@ -35,7 +35,7 @@ class ViewAllAnimeCard extends StatelessWidget {
                   'View All Anime',
                   style: GoogleFonts.montserrat(
                     color: Theme.of(context).accentColor,
-                    fontSize: 23.0,
+                    fontSize: 20.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
