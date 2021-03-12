@@ -68,7 +68,6 @@ class _MainWidgetState extends State<MainWidget>
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, watch, child) {
-        // var accentColor = watch(accentProvider).value;
         return Shortcuts(
           shortcuts: <LogicalKeySet, Intent>{
             LogicalKeySet(LogicalKeyboardKey.select): ActivateIntent(),
