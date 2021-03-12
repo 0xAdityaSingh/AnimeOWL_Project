@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1023523947102",
+    "project_id": "anime-6a04f",
+    "storage_bucket": "anime-6a04f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1023523947102:android:89dd1edc16703f338eeacf",
+        "android_client_info": {
+          "package_name": "com.c9addy.animetv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1023523947102-qebin3lojn6b8bla34i1u9mtldogf95s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.c9addy.animetv",
+            "certificate_hash": "194e0118b6c452d3f558a5d54b13b6941a155c4d"
+          }
+        },
+        {
+          "client_id": "1023523947102-cq5t53q1a1pt2pamrlakt0enp66ebaj4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBZZtV5AyI7jjAKZ0c_LYnTvJ0CDl76oY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1023523947102-cq5t53q1a1pt2pamrlakt0enp66ebaj4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
