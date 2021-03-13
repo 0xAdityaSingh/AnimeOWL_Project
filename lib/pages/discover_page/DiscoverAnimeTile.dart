@@ -7,9 +7,15 @@ import 'package:animetv/models/kitsu/KitsuModel.dart';
 import 'package:animetv/pages/anime_info_page/AnimeInfoPage.dart';
 import 'package:animetv/widgets/custom_shimmer.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+InterstitialAd _interstitialAd;
+InterstitialAd createInterstitialAdd() {
+  return InterstitialAd(adUnitId: 'ca-app-pub-7187079853593886/2620740358');
+}
 
 class DiscoverAnimeTile extends StatelessWidget {
   const DiscoverAnimeTile({
@@ -81,6 +87,10 @@ class DiscoverAnimeTile extends StatelessWidget {
               color: Colors.transparent,
               child: InkWell(
                 onTap: () {
+                  FirebaseAdMob.instance.initialize(
+                      appId: 'ca-app-pub-7187079853593886~3954729679');
+                  _interstitialAd = createInterstitialAdd()..load();
+                  _interstitialAd.show();
                   Transitions.slideTransition(
                     context: context,
                     pageBuilder: () => AnimeInfoPage(

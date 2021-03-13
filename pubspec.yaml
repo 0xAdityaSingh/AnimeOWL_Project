@@ -57,10 +57,9 @@ dependencies:
   web_socket_channel: ^1.1.0
   hexcolor: ^1.0.6
   google_fonts: ^1.1.2
-  # firebase_admob: ^0.11.0+2
   provider: ^5.0.0
   firebase_admob: ^0.10.2
-  admob_flutter: ^1.0.1
+  flutter_launcher_name: ^0.0.1
 
 dev_dependencies:
   flutter_test:
@@ -111,3 +110,5 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/discover_placeholder.png
+flutter_launcher_name:
+  name: "AnimeOWL"

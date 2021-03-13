@@ -17,7 +17,7 @@ class AppbarText extends StatelessWidget {
               fontWeight: FontWeight.w900, fontSize: 30, color: Colors.white),
         ),
         Text(
-          '.',
+          'OWL',
           style: GoogleFonts.shadowsIntoLight(
               fontWeight: FontWeight.bold,
               fontSize: 30,

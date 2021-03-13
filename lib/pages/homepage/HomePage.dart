@@ -13,9 +13,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tuple/tuple.dart';
 
 import 'recently_watched_slider/RecentlyWatchedSlider.dart';
-import 'MOTDCard.dart';
 import 'ViewAllAnimeCard.dart';
-// import 'donation_card/DonationCard.dart';
 
 class HomePage extends StatefulWidget {
   @override

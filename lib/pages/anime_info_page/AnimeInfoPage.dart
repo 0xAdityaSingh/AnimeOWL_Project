@@ -38,10 +38,8 @@ import '../../animations/TwistLoadingWidget.dart';
 import 'FavouriteButton.dart';
 
 InterstitialAd _interstitialAd;
-int _coins = 0;
-RewardedVideoAd videoAd = RewardedVideoAd.instance;
 InterstitialAd createInterstitialAdd() {
-  return InterstitialAd(adUnitId: InterstitialAd.testAdUnitId);
+  return InterstitialAd(adUnitId: 'ca-app-pub-7187079853593886/2620740358');
 }
 
 class AnimeInfoPage extends StatefulWidget {
@@ -81,10 +79,8 @@ class _AnimeInfoPageState extends State<AnimeInfoPage> {
   @override
   void initState() {
     super.initState();
-    FirebaseAdMob.instance
-        .initialize(appId: 'ca-app-pub-7187079853593886~3954729679');
-    _interstitialAd = createInterstitialAdd()..load();
-    videoAd.load(adUnitId: RewardedVideoAd.testAdUnitId);
+
+    // videoAd.load(adUnitId: RewardedVideoAd.testAdUnitId);
 
     // RewardedVideoAd.instance
     // .load(adUnitId: 'ca-app-pub-7187079853593886/3336439111');
@@ -772,28 +768,31 @@ class EpisodeCard extends StatelessWidget {
             child: Card(
               child: InkWell(
                 onTap: () {
-                  videoAd.show();
+                  FirebaseAdMob.instance.initialize(
+                      appId: 'ca-app-pub-7187079853593886~3954729679');
+                  _interstitialAd = createInterstitialAdd()..load();
+                  _interstitialAd.show();
 
                   context.read(recentlyWatchedProvider).addToLastWatched(
                         twistModel: twistModel,
                         kitsuModel: kitsuModel,
                         episodeModel: episodeModel,
                       );
+                  Transitions.slideTransition(
+                    context: context,
+                    pageBuilder: () => WatchPage(
+                      episodeModel: episodeModel,
+                      episodes: episodes,
+                      episodesWatchedProvider: episodesWatchedProvider,
+                    ),
+                  );
+                  // videoAd.listener = (RewardedVideoAdEvent event,
+                  //     {String rewardType, int rewardAmount}) {
+                  //   // print("REWARDED VIDEO AD $event");
+                  //   if (event == RewardedVideoAdEvent.rewarded) {
 
-                  videoAd.listener = (RewardedVideoAdEvent event,
-                      {String rewardType, int rewardAmount}) {
-                    // print("REWARDED VIDEO AD $event");
-                    if (event == RewardedVideoAdEvent.rewarded) {
-                      Transitions.slideTransition(
-                        context: context,
-                        pageBuilder: () => WatchPage(
-                          episodeModel: episodeModel,
-                          episodes: episodes,
-                          episodesWatchedProvider: episodesWatchedProvider,
-                        ),
-                      );
-                    }
-                  };
+                  //   }
+                  // };
                   prov.setWatchedTill(episodeModel.number);
                 },
                 child: Padding(

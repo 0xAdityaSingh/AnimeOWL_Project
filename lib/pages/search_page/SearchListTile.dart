@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,6 +8,11 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../animations/Transitions.dart';
 import '../../models/TwistModel.dart';
 import '../anime_info_page/AnimeInfoPage.dart';
+
+InterstitialAd _interstitialAd;
+InterstitialAd createInterstitialAdd() {
+  return InterstitialAd(adUnitId: 'ca-app-pub-7187079853593886/2620740358');
+}
 
 class SearchListTile extends StatelessWidget {
   final TwistModel twistModel;
@@ -56,6 +62,10 @@ class SearchListTile extends StatelessWidget {
         ],
       ),
       onTap: () {
+        FirebaseAdMob.instance
+            .initialize(appId: 'ca-app-pub-7187079853593886~3954729679');
+        _interstitialAd = createInterstitialAdd()..load();
+        _interstitialAd.show();
         Transitions.slideTransition(
           context: context,
           pageBuilder: () => AnimeInfoPage(

@@ -24,7 +24,7 @@ class InitialLoadingScreen extends StatelessWidget {
                       color: Colors.white),
                 ),
                 Text(
-                  '.',
+                  'OWL',
                   style: GoogleFonts.shadowsIntoLight(
                       fontWeight: FontWeight.bold,
                       fontSize: 50,
