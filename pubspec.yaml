@@ -66,6 +66,7 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^1.10.4
   hive_generator: ^0.8.1
+  flutter_launcher_icons: "^0.8.0"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -110,5 +111,10 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/discover_placeholder.png
+    - assets/main.png
 flutter_launcher_name:
   name: "AnimeOWL"
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon.png"

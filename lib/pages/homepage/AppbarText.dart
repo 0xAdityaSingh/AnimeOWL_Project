@@ -11,6 +11,20 @@ class AppbarText extends StatelessWidget {
     return Row(
       // mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Container(
+          // color: Colors.black,
+          height: 35,
+          width: 60,
+          decoration: new BoxDecoration(
+            image: new DecorationImage(
+              image: new AssetImage("assets/main.png"),
+              fit: BoxFit.fill,
+            ),
+          ),
+        ),
+        SizedBox(
+          width: 10,
+        ),
         Text(
           'Anime',
           style: GoogleFonts.shadowsIntoLight(

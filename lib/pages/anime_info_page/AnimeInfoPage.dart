@@ -786,13 +786,6 @@ class EpisodeCard extends StatelessWidget {
                       episodesWatchedProvider: episodesWatchedProvider,
                     ),
                   );
-                  // videoAd.listener = (RewardedVideoAdEvent event,
-                  //     {String rewardType, int rewardAmount}) {
-                  //   // print("REWARDED VIDEO AD $event");
-                  //   if (event == RewardedVideoAdEvent.rewarded) {
-
-                  //   }
-                  // };
                   prov.setWatchedTill(episodeModel.number);
                 },
                 child: Padding(

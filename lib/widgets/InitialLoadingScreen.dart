@@ -13,23 +13,38 @@ class InitialLoadingScreen extends StatelessWidget {
         body: Center(
           child: Container(
             // color: Colors.black,
-            child: Row(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  'Anime',
-                  style: GoogleFonts.shadowsIntoLight(
-                      fontWeight: FontWeight.w900,
-                      fontSize: 50,
-                      color: Colors.white),
+                Container(
+                  height: 110,
+                  width: 180,
+                  decoration: new BoxDecoration(
+                    image: new DecorationImage(
+                      image: new AssetImage("assets/main.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                 ),
-                Text(
-                  'OWL',
-                  style: GoogleFonts.shadowsIntoLight(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 50,
-                      color: Colors.amber[800]),
-                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Anime',
+                      style: GoogleFonts.shadowsIntoLight(
+                          fontWeight: FontWeight.w900,
+                          fontSize: 30,
+                          color: Colors.white),
+                    ),
+                    Text(
+                      'OWL',
+                      style: GoogleFonts.shadowsIntoLight(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                          color: Colors.amber[800]),
+                    ),
+                  ],
+                )
               ],
             ),
           ),

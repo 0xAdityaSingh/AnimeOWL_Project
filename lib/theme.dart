@@ -11,7 +11,7 @@ ThemeData getDarkTheme(Color accentColor) {
   return ThemeData.dark().copyWith(
     cardColor: cardColor,
     scaffoldBackgroundColor: bgColor,
-    dialogBackgroundColor: bgColor,
+    dialogBackgroundColor: Colors.grey[900],
     accentColor: accentColor,
     toggleableActiveColor: accentColor,
     appBarTheme: AppBarTheme(
