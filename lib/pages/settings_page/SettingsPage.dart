@@ -1,4 +1,3 @@
-import 'package:animetv/pages/settings_page/AboutAppSetting.dart';
 import 'package:animetv/pages/settings_page/ClearCacheSetting.dart';
 import 'package:animetv/pages/settings_page/DoubleTapDurationSetting.dart';
 import 'package:animetv/pages/settings_page/PlaybackSpeedSetting.dart';
@@ -46,13 +45,7 @@ class _SettingsPageState extends State<SettingsPage> {
             ClearCacheSetting(),
             SettingsCategory(title: 'Player'),
             PlaybackSpeedSetting(),
-            // ZoomFactorSetting(),
             DoubleTapDurationSetting(),
-            // SettingsCategory(title: 'Themeing'),
-            // SettingsCategory(title: 'Updates'),
-            // CheckUpdateSetting(),
-            SettingsCategory(title: 'Info'),
-            AboutAppSetting(),
           ],
         ),
       ),

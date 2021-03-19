@@ -57,10 +57,6 @@ class _RecentlyWatchedSliderState extends State<RecentlyWatchedSlider> {
                   PageView.builder(
                     controller: _controller,
                     itemBuilder: (context, index) {
-                      // Since the lastWatchedAnimes are stored from oldest first to
-                      // newest last, reverse the list so that the latest watched
-                      // anime is shown first. Maybe do this in the service itself
-                      // but fine here for now.
                       var lastWatchedAnimes =
                           provider.recentlyWatchedAnimes.reversed.toList();
 
@@ -77,13 +73,13 @@ class _RecentlyWatchedSliderState extends State<RecentlyWatchedSlider> {
                     },
                     itemCount: provider.recentlyWatchedAnimes.length,
                   ),
-                  Positioned(
-                    bottom: (orientation == Orientation.portrait
-                            ? height * 0.3
-                            : width * 0.23) +
-                        topInset / 2,
-                    child: RecentlyWatchedText(),
-                  ),
+                  // Positioned(
+                  //   bottom: (orientation == Orientation.portrait
+                  //           ? height * 0.3
+                  //           : width * 0.23) +
+                  //       topInset / 2,
+                  //   // child: RecentlyWatchedText(),
+                  // ),
                   Positioned(
                     bottom: MediaQuery.of(context).size.height * 0.05,
                     child: AnimatedSmoothIndicator(

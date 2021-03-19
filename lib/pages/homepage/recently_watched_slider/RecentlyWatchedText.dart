@@ -6,27 +6,27 @@ class RecentlyWatchedText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 20.0,
-        vertical: 8.0,
-      ),
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.white,
-        ),
-        borderRadius: BorderRadius.circular(
-          0.0,
-        ),
-      ),
-      child: Text(
-        'Recently Watched',
-        style: GoogleFonts.montserrat(
-          // letterSpacing: 1.25,
-          fontWeight: FontWeight.bold,
-          fontSize: 15.0,
-        ),
-      ),
-    );
+    // return Container(
+    //   padding: EdgeInsets.symmetric(
+    //     horizontal: 20.0,
+    //     vertical: 8.0,
+    //   ),
+    //   decoration: BoxDecoration(
+    //     border: Border.all(
+    //       color: Colors.white,
+    //     ),
+    //     borderRadius: BorderRadius.circular(
+    //       0.0,
+    //     ),
+    //   ),
+    //   // child: Text(
+    //   //   'Recently Watched',
+    //   //   style: GoogleFonts.montserrat(
+    //   //     // letterSpacing: 1.25,
+    //   //     fontWeight: FontWeight.bold,
+    //   //     fontSize: 15.0,
+    //   //   ),
+    //   // ),
+    // );
   }
 }

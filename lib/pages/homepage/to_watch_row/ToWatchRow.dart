@@ -36,9 +36,9 @@ class _ToWatchRowState extends State<ToWatchRow> {
                 ),
               ),
               Container(
-                height: 300,
+                height: 250,
                 margin: EdgeInsets.symmetric(
-                  horizontal: 8.0,
+                  horizontal: 0.0,
                 ),
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
@@ -49,8 +49,8 @@ class _ToWatchRowState extends State<ToWatchRow> {
                     var recentlyWatchedModel =
                         provider.toWatchAnimes.reversed.elementAt(index);
                     return Container(
-                      width: 200,
-                      padding: EdgeInsets.symmetric(horizontal: 4.0),
+                      width: 150,
+                      padding: EdgeInsets.symmetric(horizontal: 5.0),
                       child: DiscoverAnimeTile(
                         twistModel: recentlyWatchedModel.twistModel,
                         kitsuModel: recentlyWatchedModel.kitsuModel,

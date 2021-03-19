@@ -24,9 +24,9 @@ class _HomePageState extends State<HomePage>
     with AutomaticKeepAliveClientMixin {
   final List<Widget> widgets = [
     RecentlyWatchedSlider(),
-    ToWatchRow(),
+
     SubCategoryText(
-      text: 'Top Airing',
+      text: 'Ongoing',
       padding: EdgeInsets.symmetric(
         horizontal: 16.0,
         vertical: 12.0,
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage>
       ),
     ),
     SubCategoryText(
-      text: 'All Time Popular',
+      text: 'Popular',
       padding: EdgeInsets.symmetric(
         horizontal: 16.0,
         vertical: 12.0,
@@ -61,6 +61,7 @@ class _HomePageState extends State<HomePage>
     //   child: DonationCard(),
     // ),
     // View all anime card
+    ToWatchRow(),
     SizedBox(
       height: 10,
     ),

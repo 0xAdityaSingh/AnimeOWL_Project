@@ -23,13 +23,13 @@ class DefaultCard extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Positioned.fill(
-            child: CachedNetworkImage(
-              imageUrl: DEFAULT_IMAGE_URL,
-              fit: BoxFit.cover,
-              placeholder: (context, url) => CustomShimmer(),
-            ),
-          ),
+          // Positioned.fill(
+          //   child: CachedNetworkImage(
+          //     // imageUrl: DEFAULT_IMAGE_URL,
+          //     fit: BoxFit.cover,
+          //     placeholder: (context, url) => CustomShimmer(),
+          //   ),
+          // ),
           Positioned.fill(
             child: Container(
               width: double.infinity,
@@ -37,33 +37,33 @@ class DefaultCard extends StatelessWidget {
               color: Theme.of(context).cardColor.withOpacity(0.7),
             ),
           ),
-          Positioned(
-            bottom: orientation == Orientation.portrait
-                ? height * 0.3
-                : width * 0.225,
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 20.0,
-                vertical: 8.0,
-              ),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.white,
-                ),
-                borderRadius: BorderRadius.circular(
-                  0.0,
-                ),
-              ),
-              child: Text(
-                'Recently Watched',
-                style: GoogleFonts.montserrat(
-                  // letterSpacing: 1.25,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 15.0,
-                ),
-              ),
-            ),
-          ),
+          // Positioned(
+          //   bottom: orientation == Orientation.portrait
+          //       ? height * 0.3
+          //       : width * 0.225,
+          //   // child: Container(
+          //   //   padding: EdgeInsets.symmetric(
+          //   //     horizontal: 20.0,
+          //   //     vertical: 8.0,
+          //   //   ),
+          //   //   decoration: BoxDecoration(
+          //   //     border: Border.all(
+          //   //       color: Colors.white,
+          //   //     ),
+          //   //     borderRadius: BorderRadius.circular(
+          //   //       0.0,
+          //   //     ),
+          //   //   ),
+          //   //   // child: Text(
+          //   //   //   'Recently Watched',
+          //   //   //   style: GoogleFonts.montserrat(
+          //   //   //     // letterSpacing: 1.25,
+          //   //   //     fontWeight: FontWeight.bold,
+          //   //   //     fontSize: 15.0,
+          //   //   //   ),
+          //   //   // ),
+          //   // ),
+          // ),
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: 30.0,

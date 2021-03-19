@@ -14,7 +14,7 @@ import 'package:animetv/services/twist_service/TwistApiService.dart';
 import 'package:animetv/widgets/custom_shimmer.dart';
 import 'package:animetv/widgets/device_orientation_builder.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:firebase_admob/firebase_admob.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +27,7 @@ import 'package:supercharged/supercharged.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // Project imports:
+import '../../addds.dart';
 import '../../models/EpisodeModel.dart';
 import '../../models/kitsu/KitsuModel.dart';
 import '../../models/TwistModel.dart';
@@ -37,10 +38,11 @@ import '../../animations/TwistLoadingWidget.dart';
 
 import 'FavouriteButton.dart';
 
-InterstitialAd _interstitialAd;
-InterstitialAd createInterstitialAdd() {
-  return InterstitialAd(adUnitId: 'ca-app-pub-7187079853593886/2620740358');
-}
+// InterstitialAd createInterstitialAdd() {
+//   return InterstitialAd(
+//       adUnitId: 'ca-app-pub-7187079853593886/2620740358',
+//       );
+// }
 
 class AnimeInfoPage extends StatefulWidget {
   final TwistModel twistModel;
@@ -79,12 +81,8 @@ class _AnimeInfoPageState extends State<AnimeInfoPage> {
   @override
   void initState() {
     super.initState();
-
-    // videoAd.load(adUnitId: RewardedVideoAd.testAdUnitId);
-
-    // RewardedVideoAd.instance
-    // .load(adUnitId: 'ca-app-pub-7187079853593886/3336439111');
-
+    WidgetsFlutterBinding.ensureInitialized();
+    AdmobService.initialize();
     _scrollController = ScrollController();
     _placeholderController = ScrollController();
     _scrollController.addListener(() {
@@ -768,10 +766,10 @@ class EpisodeCard extends StatelessWidget {
             child: Card(
               child: InkWell(
                 onTap: () {
-                  FirebaseAdMob.instance.initialize(
-                      appId: 'ca-app-pub-7187079853593886~3954729679');
-                  _interstitialAd = createInterstitialAdd()..load();
-                  _interstitialAd.show();
+                  // FirebaseAdMob.instance.initialize(
+                  //     appId: 'ca-app-pub-7187079853593886~3954729679');
+
+                  AdmobService.showInterstitialAd();
 
                   context.read(recentlyWatchedProvider).addToLastWatched(
                         twistModel: twistModel,

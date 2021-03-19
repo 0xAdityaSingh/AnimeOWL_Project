@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:animetv/animations/Transitions.dart';
 import 'package:animetv/pages/anime_info_page/AnimeInfoPage.dart';
-import 'package:animetv/pages/discover_page/DiscoverPage.dart';
+
 import 'package:animetv/pages/favourites_page/FavouritesPage.dart';
 import 'package:animetv/pages/homepage/HomePage.dart';
 import 'package:animetv/pages/root_window/root_window_landscape.dart';
@@ -10,16 +10,12 @@ import 'package:animetv/pages/root_window/root_window_portrait.dart';
 import 'package:animetv/pages/settings_page/SettingsPage.dart';
 import 'package:animetv/services/twist_service/TwistApiService.dart';
 import 'package:animetv/widgets/device_orientation_builder.dart';
-import 'package:firebase_admob/firebase_admob.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:uni_links/uni_links.dart';
 import 'package:supercharged_dart/supercharged_dart.dart';
-
-InterstitialAd createInterstitialAdd() {
-  return InterstitialAd(adUnitId: 'ca-app-pub-7187079853593886/2620740358');
-}
 
 class RootWindow extends StatefulWidget {
   RootWindow({Key key}) : super(key: key);
@@ -32,7 +28,7 @@ class _RootWindowState extends State<RootWindow> with TickerProviderStateMixin {
   StreamSubscription _uriSub;
   PageController _pageController;
 
-  var pages = [HomePage(), FavouritesPage(), DiscoverPage(), SettingsPage()];
+  var pages = [HomePage(), FavouritesPage(), SettingsPage()];
   final indexProvider = StateProvider<int>((ref) => 0);
   final GlobalKey pageViewKey = GlobalKey(debugLabel: 'page_view');
 

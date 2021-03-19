@@ -29,17 +29,6 @@ class RootWindowPortrait extends StatelessWidget {
             backgroundColor: Colors.transparent,
             title: AppbarText(),
             actions: [
-              // IconButton(
-              //   icon: Icon(
-              //     Icons.chat_bubble,
-              //   ),
-              //   onPressed: () {
-              //     Transitions.slideTransition(
-              //       context: context,
-              //       pageBuilder: () => ChatPage(),
-              //     );
-              //   },
-              // ),
               IconButton(
                 icon: Icon(
                   Icons.search,
@@ -71,11 +60,11 @@ class RootWindowPortrait extends StatelessWidget {
                 label: 'Favorites',
                 tooltip: 'Favorites',
               ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.list_rounded),
-                label: 'Discover',
-                tooltip: 'Discover',
-              ),
+              // BottomNavigationBarItem(
+              //   icon: Icon(Icons.list_rounded),
+              //   label: 'Discover',
+              //   tooltip: 'Discover',
+              // ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.settings_outlined),
                 label: 'Settings',
