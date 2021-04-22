@@ -3,14 +3,12 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 const String testDevice = 'ca-app-pub-7187079853593886~3954729679';
 
-///https://stackoverflow.com/questions/50972863/admob-banner-how-to-show-only-on-home
-///
 class AdmobService {
   static InterstitialAd _interstitialAd;
 
   static String get iOSInterstitialAdUnitID => Platform.isAndroid
-      ? 'ca-app-pub-7187079853593886/2620740358'
-      : 'ca-app-pub-7187079853593886/2620740358';
+      ? 'ca-app-pub-6871076881985583/5883860185'
+      : 'ca-app-pub-6871076881985583/5883860185';
 
   static initialize() {
     if (MobileAds.instance == null) {
