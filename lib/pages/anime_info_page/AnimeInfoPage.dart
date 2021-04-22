@@ -625,7 +625,7 @@ class _AnimeInfoPageState extends State<AnimeInfoPage> {
                 stackTrace: s,
                 e: e,
                 message:
-                    'Whoops! An error occured. Looks like twist.moe is down, or your internet is not working. Please try again later.',
+                    'Whoops! An error occured. Looks like our server is down, or your internet is not working. Please try again later.',
                 onRefresh: () => context.refresh(_initDataProvider),
               ),
             );
