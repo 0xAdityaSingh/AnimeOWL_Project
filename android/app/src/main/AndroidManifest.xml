@@ -3,6 +3,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="AnimeOWL"
+        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
@@ -40,7 +41,7 @@
             android:value="2" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-7187079853593886~3954729679"/>
+            android:value="ca-app-pub-8319329448396880~1618146262"/>
 
     </application>
 </manifest>

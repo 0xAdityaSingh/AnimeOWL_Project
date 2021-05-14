@@ -1,1 +1,0 @@
-class TwistDownException implements Exception {}

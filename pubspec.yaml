@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.3+4
+version: 2.0.0+8
 
 environment:
   sdk: ">=2.9.0 <3.0.0"
@@ -24,49 +24,40 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_android_pip:
-    git:
-      url: https://github.com/simrat39/flutter_android_pip
-  video_player_header:
-    git:
-      url: https://github.com/simrat39/videoPlayerWithHeader
-  auto_size_text: ^2.1.0
-  cached_network_image: ^2.5.0
-  device_apps: ^1.2.0
-  edit_distance: ^0.4.1
-  encrypt: ^4.1.0
-  fl_chart: ^0.20.1
-  flutter_riverpod: ^0.13.1
-  font_awesome_flutter: ^8.10.0
-  get_it: ^6.0.0
-  hive: ^1.4.4+1
-  hive_flutter: ^0.3.1
-  http: ^0.12.2
-  import_sorter: ^4.2.2
-  package_info: ^2.0.0
-  path_provider: ^1.6.22
-  pedantic: ^1.10.0
-  shared_preferences: ^0.5.12+2
-  shimmer: ^1.1.2
-  smooth_page_indicator: ^0.2.0
-  supercharged: ^2.0.0
-  tuple: ^1.0.3
-  uni_links: ^0.4.0
-  url_launcher: ^6.0.2
-  wakelock: ^0.5.0+2
-  web_socket_channel: ^1.1.0
-  hexcolor: ^1.0.6
-  google_fonts: ^1.1.2
-  provider: ^5.0.0
-  google_mobile_ads: ^0.11.0+3
-  flutter_launcher_name: ^0.0.1
+  cupertino_icons: ^1.0.2
+  # http: ^0.13.2
+  intl: ^0.17.0
+  html: ^0.15.0
+  web_scraper: ^0.1.4
+  dio: ^4.0.0
+  chewie:
+  video_player:
+  cached_network_image:
+  google_fonts:
+  auto_size_text:
+  shimmer:
+  path_provider:
+  url_launcher:
+  flutter_riverpod:
+  search_app_bar_page: ^2.0.1
+  supercharged:
+  flappy_search_bar:
+  provider:
+  hexcolor: ^2.0.3
+  hive:
+  smooth_page_indicator: ^0.2.3
+  transformer_page_view: ^0.1.6
+  font_awesome_flutter: ^9.0.0
+  focused_menu: ^1.0.5
+
+  facebook_audience_network: ^0.9.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.10.4
-  hive_generator: ^0.8.1
-  flutter_launcher_icons: "^0.8.0"
+  hive_generator:
+  build_runner:
+  # flutter_launcher_icons: "^0.8.0"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
