@@ -18,11 +18,13 @@ import 'package:web_scraper/web_scraper.dart';
 
 import 'Model/info.dart';
 import 'Model/recently_watched.dart';
+import 'addss.dart';
 import 'getvideo.dart';
 
 // String path;
 
 class AnimeInfo extends StatefulWidget {
+  @override
   final malID;
   final url;
   AnimeInfo({Key key, this.malID, this.url}) : super(key: key);
@@ -32,6 +34,12 @@ class AnimeInfo extends StatefulWidget {
 }
 
 class _AnimeInfoState extends State<AnimeInfo> {
+  void initState() {
+    super.initState();
+    FBAd.initialize();
+    FBAd.loadInterstitialAd();
+  }
+
   int ic_change = 0;
   int episodenumber = 0;
   int depisodenumber = 0;
@@ -600,7 +608,7 @@ class _AnimeInfoState extends State<AnimeInfo> {
                                             deleteRecent(r.malId);
                                             saveRecent(r);
                                           }
-
+                                          await FBAd.showInterstitialAd();
                                           if (snapshot.data[3][index] == 1) {
                                             Navigator.of(context).push(
                                                 MaterialPageRoute(
@@ -774,6 +782,7 @@ class _AnimeInfoState extends State<AnimeInfo> {
                                             deleteRecent(r.malId);
                                             saveRecent(r);
                                           }
+                                          await FBAd.showInterstitialAd();
                                           if (snapshot.data[4][index] == 1) {
                                             Navigator.of(context).push(
                                                 MaterialPageRoute(

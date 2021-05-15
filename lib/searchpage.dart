@@ -13,6 +13,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/rendering.dart';
 
+import 'addss.dart';
+
 class SearchPage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -69,6 +71,8 @@ class _SearchPageState extends State<SearchPage>
 
   @override
   void initState() {
+    FBAd.initialize();
+    FBAd.loadInterstitialAd();
     _textEditingController = TextEditingController(text: '');
     _scrollController = ScrollController();
     listTileNode = FocusNode();
@@ -163,7 +167,8 @@ class _SearchPageState extends State<SearchPage>
                                             fontSize: 12.0,
                                           ),
                                         ),
-                                        onTap: () {
+                                        onTap: () async {
+                                          await FBAd.showInterstitialAd();
                                           Navigator.of(context).push(
                                               MaterialPageRoute(
                                                   builder: (context) =>

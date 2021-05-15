@@ -1,3 +1,4 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:animetv/Model/recently_watched.dart';
 import 'package:animetv/homepage.dart';
 import 'package:animetv/theme.dart';
@@ -29,6 +30,17 @@ class MyApp extends StatelessWidget {
         darkTheme: getDarkTheme(Colors.amber[800]),
         debugShowCheckedModeBanner: false,
         title: 'AnimeOWL',
-        home: HomePage());
+        home: AnimatedSplashScreen(
+          backgroundColor: Colors.black,
+          splash: 'assets/main.png',
+          nextScreen: HomePage(),
+          splashTransition: SplashTransition.fadeTransition,
+          // pageTransitionType: PageTransitionType.scale,
+        ));
   }
 }
+
+// flutter clean && flutter build appbundle --release
+// flutter clean
+// flutter pub get
+// flutter build appbundle --release --no-tree-shake-icons

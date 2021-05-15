@@ -23,6 +23,8 @@ import 'package:intl/intl.dart';
 import 'package:transformer_page_view/transformer_page_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'addss.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
 
@@ -34,6 +36,8 @@ class _HomePageState extends State<HomePage> {
   int _currentIndex = 0;
   @override
   void initState() {
+    FBAd.initialize();
+    FBAd.loadInterstitialAd();
     super.initState();
   }
 
@@ -239,32 +243,27 @@ class _HomePageState extends State<HomePage> {
                             return Padding(
                               padding:
                                   const EdgeInsets.fromLTRB(10, 10, 10, 80),
-                              child: Card(
-                                color: HexColor("#191919"),
-                                child: GridView.builder(
-                                  itemCount: snapshot.data.length,
-                                  gridDelegate:
-                                      SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount:
-                                        (orientation == Orientation.portrait)
-                                            ? 2
-                                            : 3,
-                                    childAspectRatio: MediaQuery.of(context)
-                                            .size
-                                            .width /
-                                        (MediaQuery.of(context).size.height *
-                                            1.15 /
-                                            1.5),
-                                  ),
-                                  itemBuilder:
-                                      (BuildContext context, int index) {
-                                    return Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: DiscoverAnimeFav(
-                                          anime: snapshot.data[index]),
-                                    );
-                                  },
+                              child: GridView.builder(
+                                itemCount: snapshot.data.length,
+                                gridDelegate:
+                                    SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount:
+                                      (orientation == Orientation.portrait)
+                                          ? 2
+                                          : 3,
+                                  childAspectRatio:
+                                      MediaQuery.of(context).size.width /
+                                          (MediaQuery.of(context).size.height *
+                                              1.15 /
+                                              1.5),
                                 ),
+                                itemBuilder: (BuildContext context, int index) {
+                                  return Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: DiscoverAnimeFav(
+                                        anime: snapshot.data[index]),
+                                  );
+                                },
                               ),
                             );
                           }
@@ -661,7 +660,8 @@ class DiscoverAnimeTile extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: () {
+                onTap: () async {
+                  await FBAd.showInterstitialAd();
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => AnimeInfo(
                             malID: anime.malId,
@@ -759,7 +759,8 @@ class DiscoverAnimeTileResults extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: () {
+                onTap: () async {
+                  await FBAd.showInterstitialAd();
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => GetVideo(path: anime.url)));
                 },
@@ -840,7 +841,8 @@ class DiscoverAnimeTileWeek extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: () {
+                onTap: () async {
+                  await FBAd.showInterstitialAd();
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => AnimeInfo(
                             malID: anime.malId,
@@ -923,7 +925,8 @@ class DiscoverAnimeFav extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: () {
+                onTap: () async {
+                  await FBAd.showInterstitialAd();
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => AnimeInfo(
                             malID: anime.malId,
@@ -1006,7 +1009,8 @@ class DiscoverAnimeTileRecent extends StatelessWidget {
             child: Material(
               color: Colors.transparent,
               child: InkWell(
-                onTap: () {
+                onTap: () async {
+                  await FBAd.showInterstitialAd();
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => AnimeInfo(
                             malID: anime.malId,
