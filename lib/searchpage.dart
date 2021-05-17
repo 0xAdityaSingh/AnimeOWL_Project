@@ -168,7 +168,7 @@ class _SearchPageState extends State<SearchPage>
                                           ),
                                         ),
                                         onTap: () async {
-                                          // await FBAd.showInterstitialAd();
+                                          await FBAd.showInterstitialAd();
                                           print(search_list[index].malId);
                                           Navigator.of(context).push(
                                               MaterialPageRoute(
