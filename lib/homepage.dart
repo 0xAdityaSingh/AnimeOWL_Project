@@ -20,7 +20,6 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:hive/hive.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
-import 'package:transformer_page_view/transformer_page_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'addss.dart';
@@ -349,6 +348,22 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             ListTile(
+                              title: Text('Discord'),
+                              subtitle: Text('Join our Discord Channel.'),
+                              trailing: IconButton(
+                                icon: Icon(
+                                  FontAwesomeIcons.discord,
+                                ),
+                                // iconSize: 30.0,
+                                onPressed: () async {
+                                  var url = 'https://discord.gg/WpVjTDfbek';
+                                  // if (await canLaunch(url)) {
+                                  await launch(url);
+                                  // }
+                                },
+                              ),
+                            ),
+                            ListTile(
                               title: Text('About App'),
                               subtitle: Text('Learn more!'),
                               onTap: () => showInfoDialog(),
@@ -443,26 +458,26 @@ class _HomePageState extends State<HomePage> {
     showAboutDialog(
       context: context,
       applicationName: 'AnimeOWL',
-      children: <Widget>[
-        Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            IconButton(
-              icon: Icon(
-                FontAwesomeIcons.discord,
-              ),
-              iconSize: 30.0,
-              onPressed: () async {
-                var url = 'https://discord.gg/WpVjTDfbek';
-                // if (await canLaunch(url)) {
-                await launch(url);
-                // }
-              },
-            ),
-          ],
-        ),
-      ],
+      // children: <Widget>[
+      //   Row(
+      //     mainAxisSize: MainAxisSize.max,
+      //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //     children: <Widget>[
+      //       IconButton(
+      //         icon: Icon(
+      //           FontAwesomeIcons.discord,
+      //         ),
+      //         iconSize: 30.0,
+      //         onPressed: () async {
+      //           var url = 'https://discord.gg/WpVjTDfbek';
+      //           // if (await canLaunch(url)) {
+      //           await launch(url);
+      //           // }
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ],
     );
   }
 }

@@ -145,12 +145,12 @@ class _AnimeInfoState extends State<AnimeInfo> {
       }
       bool ans = await checkIfRecent(u['mal_id']);
       if (ans == true) {
-        print("Loaded via Episodes");
+        // print("Loaded via Episodes");
         var temp = await getRecent(u['mal_id']);
         episodenumber = temp.enumber;
         depisodenumber = temp.denumber;
       }
-      print("Loaded via API");
+      // print("Loaded via API");
       r = Information(
           title: u['title'],
           url: u['url'],
@@ -256,8 +256,8 @@ class _AnimeInfoState extends State<AnimeInfo> {
         final startIndex = str.indexOf(start);
         final endIndex = str.indexOf(end, startIndex + start.length);
 
-        int enumber =
-            int.parse(str.substring(startIndex + start.length, endIndex));
+        String temp = str.substring(startIndex + start.length, endIndex);
+        int enumber = int.parse(temp.replaceAll(RegExp('[^0-9]'), ''));
         // print("Enumber: " + enumber.toString());
         var list = new List<int>.generate(enumber, (i) => i + 1);
         return list;
@@ -342,9 +342,11 @@ class _AnimeInfoState extends State<AnimeInfo> {
       } else {
         return [];
       }
+
       final rawUrl = 'https://animixplay.to/' + path;
       final webScraper = WebScraper('https://animixplay.to');
       final endpoint = rawUrl.replaceAll(r'https://animixplay.to', '');
+
       if (await webScraper.loadWebPage(endpoint)) {
         final titleElements = webScraper.getElement('#epslistplace', []);
         // final titlevid = webScraper.getElement('body > div.playerpage', []);
@@ -353,10 +355,8 @@ class _AnimeInfoState extends State<AnimeInfo> {
         const end = ',"0"';
         final startIndex = str.indexOf(start);
         final endIndex = str.indexOf(end, startIndex + start.length);
-
-        int enumber =
-            int.parse(str.substring(startIndex + start.length, endIndex));
-        print("Enumber: " + enumber.toString());
+        String temp = str.substring(startIndex + start.length, endIndex);
+        int enumber = int.parse(temp.replaceAll(RegExp('[^0-9]'), ''));
         var list = new List<int>.generate(enumber, (i) => i + 1);
         return list;
       }
@@ -609,23 +609,23 @@ class _AnimeInfoState extends State<AnimeInfo> {
                                             saveRecent(r);
                                           }
                                           await FBAd.showInterstitialAd();
-                                          if (snapshot.data[3][index] == 1) {
-                                            Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        GetVideo(
-                                                            path: snapshot
-                                                                .data[1])));
-                                          } else {
-                                            Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) => GetVideo(
-                                                        path: snapshot.data[1] +
-                                                            "/ep" +
-                                                            snapshot.data[3]
-                                                                    [index]
-                                                                .toString())));
-                                          }
+                                          // if (snapshot.data[3][index] == 1) {
+                                          //   Navigator.of(context).push(
+                                          //       MaterialPageRoute(
+                                          //           builder: (context) =>
+                                          //               GetVideo(
+                                          //                   path: snapshot
+                                          //                       .data[1])));
+                                          // } else {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) => GetVideo(
+                                                      path: snapshot.data[1] +
+                                                          "/ep" +
+                                                          snapshot.data[3]
+                                                                  [index]
+                                                              .toString())));
+                                          // }
                                         },
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
@@ -783,23 +783,23 @@ class _AnimeInfoState extends State<AnimeInfo> {
                                             saveRecent(r);
                                           }
                                           await FBAd.showInterstitialAd();
-                                          if (snapshot.data[4][index] == 1) {
-                                            Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        GetVideo(
-                                                            path: snapshot
-                                                                .data[2])));
-                                          } else {
-                                            Navigator.of(context).push(
-                                                MaterialPageRoute(
-                                                    builder: (context) => GetVideo(
-                                                        path: snapshot.data[2] +
-                                                            "/ep" +
-                                                            snapshot.data[4]
-                                                                    [index]
-                                                                .toString())));
-                                          }
+                                          // if (snapshot.data[4][index] == 1) {
+                                          //   Navigator.of(context).push(
+                                          //       MaterialPageRoute(
+                                          //           builder: (context) =>
+                                          //               GetVideo(
+                                          //                   path: snapshot
+                                          //                       .data[2])));
+                                          // } else {
+                                          Navigator.of(context).push(
+                                              MaterialPageRoute(
+                                                  builder: (context) => GetVideo(
+                                                      path: snapshot.data[2] +
+                                                          "/ep" +
+                                                          snapshot.data[4]
+                                                                  [index]
+                                                              .toString())));
+                                          // }
                                         },
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
