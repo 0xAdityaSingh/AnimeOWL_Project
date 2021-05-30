@@ -1,13 +1,13 @@
-class Movie {
+class MovieG {
   String title;
   String url;
   String picture;
   String infotext;
   int score;
 
-  Movie({this.title, this.url, this.picture, this.infotext, this.score});
+  MovieG({this.title, this.url, this.picture, this.infotext, this.score});
 
-  Movie.fromJson(Map<String, dynamic> json) {
+  MovieG.fromJson(Map<String, dynamic> json) {
     title = json['title'];
     url = json['url'];
     picture = json['picture'];

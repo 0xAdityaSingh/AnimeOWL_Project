@@ -36,7 +36,7 @@ class WatchTrailerButton extends StatelessWidget {
               8.0,
             ),
           ),
-          primary: Colors.amber[800],
+          primary: Theme.of(context).accentColor,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

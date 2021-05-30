@@ -34,6 +34,7 @@ class SearchPageInputBox extends StatelessWidget {
         cursorColor: Theme.of(context).accentColor,
         onSubmitted: (value) => listTileFocusNode.requestFocus(),
         decoration: InputDecoration(
+          labelStyle: TextStyle(color: Theme.of(context).accentColor),
           labelText: 'Search',
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(

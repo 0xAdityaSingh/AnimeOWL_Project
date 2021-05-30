@@ -12,6 +12,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:hive/hive.dart';
 import 'package:http/http.dart' as http;
+import 'package:wakelock/wakelock.dart';
 
 // import 'package:provider/provider.dart';
 import 'package:web_scraper/web_scraper.dart';
@@ -380,7 +381,9 @@ class _AnimeInfoState extends State<AnimeInfo> {
               builder: (BuildContext context, AsyncSnapshot snapshot) {
                 if (snapshot.data == null) {
                   return Center(
-                    child: CircularProgressIndicator(),
+                    child: CircularProgressIndicator(
+                      color: Theme.of(context).accentColor,
+                    ),
                   );
                 } else {
                   return SafeArea(
@@ -419,7 +422,7 @@ class _AnimeInfoState extends State<AnimeInfo> {
                                 ),
                                 Container(
                                   decoration: ShapeDecoration(
-                                    color: Colors.amber[800],
+                                    color: Theme.of(context).accentColor,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(
                                         8.0,
@@ -464,8 +467,8 @@ class _AnimeInfoState extends State<AnimeInfo> {
                             Card(
                               color: HexColor("#191919"),
                               child: TabBar(
-                                indicatorColor: Colors.amber[800],
-                                labelColor: Colors.amber[800],
+                                indicatorColor: Theme.of(context).accentColor,
+                                labelColor: Theme.of(context).accentColor,
                                 unselectedLabelColor: Colors.white,
                                 labelStyle: GoogleFonts.montserrat(
                                     fontWeight: FontWeight.bold, fontSize: 15),
@@ -609,23 +612,21 @@ class _AnimeInfoState extends State<AnimeInfo> {
                                             saveRecent(r);
                                           }
                                           await FBAd.showInterstitialAd();
-                                          // if (snapshot.data[3][index] == 1) {
-                                          //   Navigator.of(context).push(
-                                          //       MaterialPageRoute(
-                                          //           builder: (context) =>
-                                          //               GetVideo(
-                                          //                   path: snapshot
-                                          //                       .data[1])));
-                                          // } else {
+                                          Wakelock.enable();
                                           Navigator.of(context).push(
                                               MaterialPageRoute(
-                                                  builder: (context) => GetVideo(
-                                                      path: snapshot.data[1] +
-                                                          "/ep" +
-                                                          snapshot.data[3]
-                                                                  [index]
-                                                              .toString())));
-                                          // }
+                                                  builder: (context) =>
+                                                      GetVideo(
+                                                        path: snapshot.data[1] +
+                                                            "/ep" +
+                                                            snapshot.data[3]
+                                                                    [index]
+                                                                .toString(),
+                                                        name: snapshot
+                                                            .data[0].title,
+                                                        img: snapshot
+                                                            .data[0].image_url,
+                                                      )));
                                         },
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
@@ -656,8 +657,9 @@ class _AnimeInfoState extends State<AnimeInfo> {
                                                                 .arrow_forward_ios_sharp,
                                                             size: 15)
                                                         : Icon(Icons.done,
-                                                            color: Colors
-                                                                .amber[800],
+                                                            color: Theme.of(
+                                                                    context)
+                                                                .accentColor,
                                                             size: 15),
                                                   ),
                                                 ],
@@ -783,23 +785,21 @@ class _AnimeInfoState extends State<AnimeInfo> {
                                             saveRecent(r);
                                           }
                                           await FBAd.showInterstitialAd();
-                                          // if (snapshot.data[4][index] == 1) {
-                                          //   Navigator.of(context).push(
-                                          //       MaterialPageRoute(
-                                          //           builder: (context) =>
-                                          //               GetVideo(
-                                          //                   path: snapshot
-                                          //                       .data[2])));
-                                          // } else {
+                                          Wakelock.enable();
                                           Navigator.of(context).push(
                                               MaterialPageRoute(
-                                                  builder: (context) => GetVideo(
-                                                      path: snapshot.data[2] +
-                                                          "/ep" +
-                                                          snapshot.data[4]
-                                                                  [index]
-                                                              .toString())));
-                                          // }
+                                                  builder: (context) =>
+                                                      GetVideo(
+                                                        path: snapshot.data[2] +
+                                                            "/ep" +
+                                                            snapshot.data[4]
+                                                                    [index]
+                                                                .toString(),
+                                                        name: snapshot
+                                                            .data[0].title,
+                                                        img: snapshot
+                                                            .data[0].image_url,
+                                                      )));
                                         },
                                         child: Padding(
                                           padding: const EdgeInsets.all(8.0),
@@ -830,8 +830,9 @@ class _AnimeInfoState extends State<AnimeInfo> {
                                                                 .arrow_forward_ios_sharp,
                                                             size: 15)
                                                         : Icon(Icons.done,
-                                                            color: Colors
-                                                                .amber[800],
+                                                            color: Theme.of(
+                                                                    context)
+                                                                .accentColor,
                                                             size: 15),
                                                   ),
                                                 ],

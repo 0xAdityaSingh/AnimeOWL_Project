@@ -13,12 +13,6 @@ Future<void> main() async {
   Hive
     ..init(appDocumentDir.path)
     ..registerAdapter(RecentlyWatchedAdapter());
-
-  // WidgetsFlutterBinding.ensureInitialized();
-  // final appDocumentDir = await getApplicationDocumentsDirectory();
-  // Hive.registerAdapter<RecentlyWatched>(RecentlyWatchedAdapter());
-  // // Hive.registerAdapter(RecentlyWatchedAdapter());
-  // Hive.init(appDocumentDir.path);
   runApp(MyApp());
 }
 
@@ -27,7 +21,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        darkTheme: getDarkTheme(Colors.amber[800]),
+        theme: getDarkTheme(Colors.amber[800]),
+
+        // darkTheme: getDarkTheme(Colors.amber[800]),
         debugShowCheckedModeBanner: false,
         title: 'AnimeOWL',
         home: AnimatedSplashScreen(

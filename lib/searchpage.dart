@@ -33,21 +33,19 @@ class _SearchPageState extends State<SearchPage>
   String result = "";
 // List<Searchh> filteredUsers = List();
   Future<List<Searchh>> getsearch(String text) async {
+    // var response1 = await http.get(Uri.https('animeowl1033.herokuapp.com', ''));
+    // if (response1.statusCode == 200) {
+    //   return [];
+    // }
     if (text == "") {
       return [];
     } else {
       var response = await Dio().get(
         'https://api.jikan.moe/v3/search/anime?q=' + text,
       );
-      // print(response.statusCode);
-      // print(response.data['results']);
       var jsonData = response.data['results'];
-      // print(jsonData);
-
       List<Searchh> result = [];
-
       for (var u in jsonData) {
-        // print(u['title']);
         Searchh r = Searchh(
           title: u['title'],
           url: u['url'],
@@ -57,9 +55,6 @@ class _SearchPageState extends State<SearchPage>
         );
         result.add(r);
       }
-      // setState(() {
-      //   search = result;
-      // });
       return result;
     }
   }
@@ -68,7 +63,6 @@ class _SearchPageState extends State<SearchPage>
   ScrollController _scrollController;
   FocusNode listTileNode;
   FocusNode backButtonNode;
-
   @override
   void initState() {
     FBAd.initialize();
@@ -116,11 +110,7 @@ class _SearchPageState extends State<SearchPage>
                   listTileFocusNode: listTileNode,
                   backButtonFocusNode: backButtonNode,
                   controller: _textEditingController,
-                  // onSubmitted:()
                   onChanged: (string) async {
-                    // _debouncer.run(() {
-                    // await getsearch(string);
-
                     List<Searchh> test = [];
                     test = await getsearch(string);
 
@@ -144,7 +134,6 @@ class _SearchPageState extends State<SearchPage>
                           return Padding(
                             padding: const EdgeInsets.all(10.0),
                             child: Card(
-                              // color: HexColor("#191919"),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Row(

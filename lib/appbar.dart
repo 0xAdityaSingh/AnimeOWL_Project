@@ -35,7 +35,7 @@ class AppbarText extends StatelessWidget {
           style: GoogleFonts.shadowsIntoLight(
               fontWeight: FontWeight.bold,
               fontSize: 30,
-              color: Colors.amber[800]),
+              color: Theme.of(context).accentColor),
         ),
       ],
     );

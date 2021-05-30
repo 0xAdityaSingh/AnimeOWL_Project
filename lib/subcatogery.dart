@@ -22,7 +22,7 @@ class SubCategoryText extends StatelessWidget {
           // style: GoogleFonts.montserrat(
           color: Theme.of(context).accentColor,
           fontWeight: FontWeight.bold,
-          fontSize: 18,
+          fontSize: 16,
           // letterSpacing: 0.5,
         ),
       ),
