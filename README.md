@@ -1,4 +1,4 @@
-# animetv
+# AnimeOWL
 
 A new Flutter project.
 
