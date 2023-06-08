@@ -29,7 +29,7 @@ dependencies:
   intl: ^0.17.0
   html: ^0.15.0
   web_scraper: ^0.1.4
-  dio: ^4.0.0
+  dio: ^5.2.0+1
   cached_network_image:
   google_fonts:
   auto_size_text:
